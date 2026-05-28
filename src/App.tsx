@@ -88,7 +88,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="text-xl font-bold tracking-tight text-slate-800 font-display">
-              QR Forge <span className="text-indigo-650 text-indigo-600">Pro</span>
+              QR Generator <span className="text-indigo-650 text-indigo-600">Studio</span>
             </h1>
             <p className="text-[11px] text-slate-400 font-mono -mt-0.5">High-Resolution Vector & Raster Studio</p>
           </div>

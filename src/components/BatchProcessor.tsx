@@ -242,7 +242,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
 
           <textarea
             rows={6}
-            placeholder="https://ai.studio, first_badge, AI Studio&#10;https://github.com, code_repo, My Repository"
+            placeholder="https://site.com, QR Code Generator Studio&#10;https://github.com, code_repo, My Repository"
             value={bulkTextInput}
             onChange={(e) => setBulkTextInput(e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 rounded-xl p-3 text-xs text-slate-700 font-mono outline-none resize-none transition-all placeholder:text-slate-400"
@@ -273,11 +273,11 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
             {/* Select settings options details */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 border border-slate-200 rounded-xl animate-fadeIn">
               <div className="space-y-1">
-                <span className="text-[11px] text-slate-505 text-slate-500 uppercase tracking-wider block font-bold">Bulk File Format</span>
+                <span className="text-[11px] text-slate-500 uppercase tracking-wider block font-bold">Bulk File Format</span>
                 <select
                   value={batchFormat}
-                  onChange={(e) => setBatchFormat(e.target.value as any)}
-                  className="w-full bg-white border border-slate-200 p-2 rounded-lg text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-505 focus:border-indigo-500 cursor-pointer"
+                  onChange={(e) => setBatchFormat(e.target.value)}
+                  className="w-full bg-white border border-slate-200 p-2 rounded-lg text-xs font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 cursor-pointer"
                 >
                   <option value="png-512">Raster PNG (Compact 512px)</option>
                   <option value="png-1024">HD Raster PNG (Web 1024px)</option>
@@ -298,7 +298,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
           {isCompiling ? (
             <div className="bg-slate-50 p-4 border border-slate-200 rounded-xl space-y-2">
               <div className="flex items-center justify-between text-xs font-semibold font-mono">
-                <span className="text-indigo-605 text-indigo-600 flex items-center gap-2 animate-pulse">
+                <span className="text-indigo-600 flex items-center gap-2 animate-pulse">
                   <Play className="w-3.5 h-3.5 text-indigo-600 animate-spin" />
                   Compiling High-Resolution Package...
                 </span>
@@ -350,7 +350,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
             </button>
             <button
               onClick={handleClearAll}
-              className="px-2.5 py-1 bg-rose-50 border border-rose-200 hover:bg-rose-100 text-[11px] text-rose-605 font-bold text-rose-600 rounded transition-all cursor-pointer"
+              className="px-2.5 py-1 bg-rose-50 border border-rose-200 hover:bg-rose-100 text-[11px] text-rose-600 font-bold rounded transition-all cursor-pointer"
             >
               Clear Queue
             </button>
@@ -360,7 +360,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
         {/* Table representation */}
         <div className="overflow-x-auto font-sans">
           {items.length === 0 ? (
-            <div className="text-center py-12 px-4 text-slate-550 bg-white">
+            <div className="text-center py-12 px-4 text-slate-500 bg-white">
               <FolderArchive className="w-12 h-12 text-slate-200 mx-auto mb-2" />
               <p className="text-sm font-semibold text-slate-600">Queue is empty</p>
               <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto">Paste strings above or click add row below to build a dynamic print queue.</p>
@@ -368,7 +368,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
           ) : (
             <table className="w-full text-left border-collapse" id="batch-interactive-table">
               <thead>
-                <tr className="border-b border-slate-200 text-[10px] font-bold text-indigo-650 text-indigo-600 uppercase tracking-wider bg-slate-50/50 select-none">
+                <tr className="border-b border-slate-200 text-[10px] font-bold text-indigo-600 uppercase tracking-wider bg-slate-50/50 select-none">
                   <th className="py-3.5 px-4 w-12 text-center">Active</th>
                   <th className="py-3.5 px-3">Scan String / Payload URL</th>
                   <th className="py-3.5 px-3 w-48">Output Filename</th>
@@ -391,7 +391,7 @@ export default function BatchProcessor({ config }: BatchProcessorProps) {
                         type="checkbox"
                         checked={item.isSelected}
                         onChange={() => handleToggleSelect(item.id)}
-                        className="rounded border-slate-300 text-indigo-600 focus:ring-0 bg-white cursor-pointer w-4 h-4 accent-indigo-605"
+                        className="rounded border-slate-300 text-indigo-600 focus:ring-0 bg-white cursor-pointer w-4 h-4 accent-indigo-600"
                       />
                     </td>
 
