@@ -29,7 +29,7 @@ type QRInputType = 'url' | 'text' | 'wifi' | 'email' | 'phone';
 
 export default function SingleGenerator({ config, onSaveConfig }: SingleGeneratorProps) {
   const [inputType, setInputType] = useState<QRInputType>('url');
-  const [inputValue, setInputValue] = useState('https://ai.studio/build');
+  const [inputValue, setInputValue] = useState('https://qr-generator-studio-beta.vercel.app/');
   const [isRenderError, setIsRenderError] = useState<string | null>(null);
   
   // WiFi Form States
@@ -57,7 +57,7 @@ export default function SingleGenerator({ config, onSaveConfig }: SingleGenerato
   const getProcessedPayload = (): string => {
     switch (inputType) {
       case 'url':
-        if (!inputValue.trim()) return 'https://ai.studio/build';
+        if (!inputValue.trim()) return 'https://qr-generator-studio-beta.vercel.app/';
         return inputValue.startsWith('http://') || inputValue.startsWith('https://')
           ? inputValue.trim()
           : `https://${inputValue.trim()}`;
@@ -75,7 +75,7 @@ export default function SingleGenerator({ config, onSaveConfig }: SingleGenerato
         if (!phoneNumber) return 'tel:+1234567890';
         return `tel:${phoneNumber.trim()}`;
       default:
-        return 'https://ai.studio/build';
+        return 'https://qr-generator-studio-beta.vercel.app/';
     }
   };
 
